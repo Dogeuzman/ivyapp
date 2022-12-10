@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.ivyapp.patientsDisplay.PatientDisplayFragment">
+
+    <data>
+        <variable
+            name="patientDisplayViewModel"
+            type="com.example.ivyapp.patientsDisplay.PatientDisplayViewModel" />
+    </data>
+
+<!--    <androidx.drawerlayout.widget.DrawerLayout-->
+<!--        android:id="@+id/drawerLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical" >
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:navigationIcon="@drawable/shr_menu"-->
+<!--            app:title="IvyApp"/>-->
+
+        <EditText
+            android:id="@+id/first_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Enter Patient First Name"
+            android:text="@={patientDisplayViewModel.inputPatientFirstname}"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/last_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Enter Patient Last Name"
+            android:text="@={patientDisplayViewModel.inputPatientLastName}"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/iv_pump_unit_num_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Enter IV Pump Unit Number"
+            android:text="@={patientDisplayViewModel.inputIvPumpUnitNum}"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/flow_rate_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Enter IV Pump Flow Rate"
+            android:text="@={patientDisplayViewModel.inputFlowRate}"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/save_or_update_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#EE3E38"
+                android:textColor="@color/white"
+                android:text="@={patientDisplayViewModel.saveOrUpdateButtonText}"
+                android:onClick="@{() -> patientDisplayViewModel.saveOrUpdate()}"/>
+
+            <Button
+                android:id="@+id/clear_all_or_delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#EE3E38"
+                android:textColor="@color/white"
+                android:text="@={patientDisplayViewModel.clearAllOrDeleteButtonText}"
+                android:onClick="@{() -> patientDisplayViewModel.clearAllOrDelete()}"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/patient_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="306dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:background="#EE3E38"
+                android:textColor="@color/white"
+                android:onClick="@{() -> patientDisplayViewModel.goToLogin()}"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+<!--        <com.google.android.material.navigation.NavigationView-->
+<!--            android:id="@+id/navView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:fitsSystemWindows="true"-->
+<!--            app:headerLayout="@layout/nav_header"-->
+<!--            app:menu="@menu/navdrawer_menu"/>-->
+
+
+<!--    </androidx.drawerlayout.widget.DrawerLayout>-->
+
+
+</layout>

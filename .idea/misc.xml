@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/drawable/shr_menu.xml" value="0.134" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_about.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_dog_detail.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_faq.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_login.xml" value="0.144" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_notification_display.xml" value="0.1" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_patient_display.xml" value="0.2" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_register.xml" value="0.2" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_user_display.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/nav_header.xml" value="0.2076923076923077" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/notification_item.xml" value="0.1" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/patient_item.xml" value="0.1" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/menu/navdrawer_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/menu/options_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/dog_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/fragment_dog_detail.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/fragment_dog_display.xml" value="0.264" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/fragment_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/fragment_register.xml" value="0.264" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/fragment_user_display.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/login_register_app/app/src/main/res/layout/list_item.xml" value="0.22826086956521738" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
