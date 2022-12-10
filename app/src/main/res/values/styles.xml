@@ -13,4 +13,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
+<!--        <style name="Widget.Ivy.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+<!--            <item name="hintTextColor">@color/red</item>-->
+<!--            <item name="android:paddingBottom">8dp</item>-->
+<!--            <item name="boxStrokeColor">@color/red</item>-->
+<!--        </style>-->
+
 </resources>

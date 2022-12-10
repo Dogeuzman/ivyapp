@@ -31,88 +31,89 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        <TextView
-            android:id="@+id/userNameTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="80dp"
-            android:text="Username"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <TextView
-            android:id="@+id/passwordTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="80dp"
-            android:text="Password"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userNameTextField" />
 
-        <EditText
-            android:id="@+id/userNameTextField"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="80dp"
-            android:ems="10"
-            android:hint="Enter your username"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            android:text="@={loginViewModel.inputUsername}"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />
+<!--        <TextView-->
+<!--            android:id="@+id/userNameTextView"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="80dp"-->
+<!--            android:layout_marginEnd="80dp"-->
+<!--            android:text="Username"-->
+<!--            android:textAlignment="viewStart"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            tools:layout_editor_absoluteY="317dp" />-->
 
-        <EditText
-            android:id="@+id/passwordTextField"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="80dp"
-            android:ems="10"
-            android:hint="Enter your password"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:text="@={loginViewModel.inputPassword}"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
+<!--        <TextView-->
+<!--            android:id="@+id/passwordTextView"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="80dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="80dp"-->
+<!--            android:text="Password"-->
+<!--            android:textAlignment="viewStart"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/userNameTextField" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/userNameTextField"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="80dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="80dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter your username"-->
+<!--            android:importantForAutofill="no"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:text="@={loginViewModel.inputUsername}"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/passwordTextField"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="80dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="80dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter your password"-->
+<!--            android:importantForAutofill="no"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:text="@={loginViewModel.inputPassword}"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />-->
 
         <Button
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
+            android:background="#EE3E38"
             android:onClick="@{()->loginViewModel.onLoginButtonClicked()}"
             android:text="Login"
-            android:background="#EE3E38"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
         <TextView
             android:id="@+id/SignUpButton"
@@ -136,6 +137,59 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/red"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="20dp"
+            android:hint="Enter your username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@color/red"
+                android:id="@+id/userNameTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={loginViewModel.inputUsername}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/red"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            android:id="@+id/passwordInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="20dp"
+            android:hint="Enter your password"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@color/red"
+                android:id="@+id/passwordTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@={loginViewModel.inputPassword}"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="392dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
