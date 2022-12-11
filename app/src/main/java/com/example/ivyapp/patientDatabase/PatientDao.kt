@@ -1,6 +1,7 @@
 package com.example.ivyapp.patientDatabase
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 
 @Dao
@@ -22,6 +23,9 @@ interface PatientDao {
     fun getAllPatients(): LiveData<List<Patient>>
 
     @Query("SELECT * FROM Patients_table WHERE patient_id = :patientId")
-    suspend fun patientSearch(patientId: Int): Patient?
+    fun patientSearch(patientId: Int): LiveData<Patient>
+
+//    @Query("SELECT * FROM Patients_table WHERE patient_id = :patientId")
+//    fun patientSearchReturnPatient(patientId: Int): Patient
 
 }

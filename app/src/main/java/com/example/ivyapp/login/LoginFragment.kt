@@ -16,7 +16,7 @@ import com.example.ivyapp.R
 import com.example.ivyapp.database.UserDatabase
 import com.example.ivyapp.database.UsersRepository
 import com.example.ivyapp.databinding.FragmentLoginBinding
-import kotlinx.android.synthetic.main.activity_main.*
+//import kotlinx.android.synthetic.main.activity_main.*
 
 
 class LoginFragment : Fragment() {

@@ -23,6 +23,14 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
     val navigateToLogin: LiveData<Boolean>
         get() = _navigateToLogin
 
+    private val _patientClicked = MutableLiveData<Boolean>()
+    val patientClicked: LiveData<Boolean>
+        get() = _patientClicked
+
+    private val _navigateToPatientDetail = MutableLiveData<Int>()
+    val navigateToPatientDetail
+        get() = _navigateToPatientDetail
+
     private val _statusMessage = MutableLiveData<PatientDisplayEvent<String>>()
     val statusMessage: LiveData<PatientDisplayEvent<String>>
         get() = _statusMessage
@@ -40,15 +48,19 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
     @Bindable
     val inputFlowRate = MutableLiveData<String>()
 
+
     val saveOrUpdateButtonText = MutableLiveData<String>()
     val clearAllOrDeleteButtonText = MutableLiveData<String>()
 
     init {
         saveOrUpdateButtonText.value = "Save"
         clearAllOrDeleteButtonText.value = "Clear"
+        _patientClicked.value = false
     }
 
+
     fun saveOrUpdate() {
+//        Log.i("MYTAG", "${saveOrUpdateButtonText.value}")
        // Log.i("MYTAG", "${inputPatientFirstname.value}, ${inputPatientLastName.value}, ${inputIvPumpUnitNum.value}, ${inputFlowRate.value}")
        if ((inputPatientFirstname.value == null) || (inputPatientLastName.value == null) || (inputIvPumpUnitNum.value == null) || (inputFlowRate.value == null)) {
            _statusMessage.value = PatientDisplayEvent("Please complete all the fields before submitting")
@@ -60,6 +72,7 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
                patientToUpdateOrDelete.infusionPumpUnitNum = inputIvPumpUnitNum.value!!.toInt()
                patientToUpdateOrDelete.flowRate = inputFlowRate.value!!.toDouble()
                update(patientToUpdateOrDelete)
+               _patientClicked.value = false
            }else {
 //               Log.i("MYTAG", "${inputPatientFirstname.value} ${inputPatientLastName.value}")
                val patientFirstName: String = inputPatientFirstname.value!!
@@ -72,6 +85,7 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
                inputPatientLastName.value = null
                inputIvPumpUnitNum.value = null
                inputFlowRate.value = null
+               _patientClicked.value = false
            }
        }
     }
@@ -93,6 +107,7 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
         patientToUpdateOrDelete = patient
         saveOrUpdateButtonText.value = "Update"
         clearAllOrDeleteButtonText.value = "Delete"
+
     }
 
     fun insert(patient: Patient): Job = viewModelScope.launch {
@@ -114,6 +129,7 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
     }
 
     fun delete(patient: Patient): Job = viewModelScope.launch {
+        _patientClicked.value = false
         repository.delete(patient)
         inputPatientFirstname.value = null
         inputPatientLastName.value = null
@@ -139,6 +155,33 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
         _navigateToLogin.value = false
         _statusMessage.value = PatientDisplayEvent("Successfully logged out")
     }
+
+    fun onPatientClicked() {
+        _patientClicked.value = true
+    }
+
+    fun onBackToPatientCard() {
+        _patientClicked.value = false
+    }
+
+    fun addPatientCardClicked() {
+        _patientClicked.value = true
+        isUpdateOrDelete = false
+        inputPatientFirstname.value = null
+        inputPatientLastName.value = null
+        inputIvPumpUnitNum.value = null
+        inputFlowRate.value = null
+        saveOrUpdateButtonText.value = "Save"
+        clearAllOrDeleteButtonText.value = "Clear All"
+    }
+
+//    fun onPatientClicked(patientId: Int) {
+//        _navigateToPatientDetail.value = patientId
+//    }
+
+//    fun onPatientNavigated() {
+//        _navigateToPatientDetail.value = null
+//    }
 
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
