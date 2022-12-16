@@ -15,59 +15,133 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/inputRegUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:hint="Enter Username"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="@={registerViewModel.inputName}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
 
-        <EditText
-            android:id="@+id/inputEmail"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registerUsernameInputLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:ems="10"
-            android:hint="Enter Email"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="@={registerViewModel.inputEmail}"
+            android:layout_margin="4dp"
+            android:hint="Enter your Username"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            app:hintTextColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputRegUsername" />
+            app:layout_constraintTop_toBottomOf="@+id/txtRegister">
 
-        <EditText
-            android:id="@+id/inputRegPassword"
-            android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userNameTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={registerViewModel.inputName}"
+                android:textColor="@color/red" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--        <EditText-->
+<!--            android:id="@+id/inputRegUsername"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter Username"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:text="@={registerViewModel.inputName}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.502"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/txtRegister" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/inputEmail"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter Email"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:text="@={registerViewModel.inputEmail}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.497"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/inputRegUsername" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/inputRegPassword"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter Password"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:text="@={registerViewModel.inputPassword}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.502"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/inputEmail" />-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registerEmailInputLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:ems="10"
-            android:hint="Enter Password"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:text="@={registerViewModel.inputPassword}"
+            android:layout_margin="4dp"
+            android:hint="Enter your Email"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            app:hintTextColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/registerUsernameInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={registerViewModel.inputEmail}"
+                android:textColor="@color/red" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registerPasswordInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Enter your Password"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            app:hintTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registerEmailInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputRegPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={registerViewModel.inputPassword}"
+                android:textColor="@color/red" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/txtRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="104dp"
             android:text="REGISTER"
             android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,20 +149,21 @@
             android:id="@+id/btnConfirmRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:onClick="@{() -> registerViewModel.onRegisterButtonClicked()}"
-            android:text="Register"
+            android:layout_marginTop="50dp"
             android:background="#EE3E38"
+            android:onClick="@{() -> registerViewModel.onRegisterButtonClicked()}"
+            android:text="Sign Up"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputRegPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/registerPasswordInputLayout" />
 
         <TextView
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="210dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="257dp"
             android:onClick="@{() -> registerViewModel.goToLogin()}"
             android:text="Already have an account?"
             app:layout_constraintBottom_toBottomOf="parent"

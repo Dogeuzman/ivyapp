@@ -21,7 +21,7 @@ import com.example.ivyapp.login.LoginFragment
 import com.example.ivyapp.notificationDisplay.NotificationDisplayFragment
 import com.example.ivyapp.patientsDisplay.PatientDisplayFragment
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_main.*
+//import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.notificationDisplayFragment -> fragmentName = "Notifications"
                 R.id.aboutFragment2 -> fragmentName = "About"
                 R.id.faqFragment -> fragmentName = "FAQ"
+//                R.id.updatePatientFragment -> fragmentName = "Update"
             }
 
             if(destination.id==R.id.loginFragment || destination.id==R.id.registerFragment){

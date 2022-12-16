@@ -25,8 +25,8 @@ import com.example.ivyapp.notificationDisplay.NotificationDisplayFragment
 import com.example.ivyapp.patientDatabase.PatientDatabase
 import com.example.ivyapp.patientDatabase.PatientRepository
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_patient_display.*
+//import kotlinx.android.synthetic.main.activity_main.*
+//import kotlinx.android.synthetic.main.fragment_patient_display.*
 
 
 class PatientDisplayFragment : Fragment() {
@@ -80,8 +80,22 @@ class PatientDisplayFragment : Fragment() {
 
         binding.patientDisplayViewModel = patientDisplayViewModel
 
+//        binding.firstNameText.visibility = View.GONE
+//        binding.lastNameText.visibility = View.GONE
+//        binding.ivPumpUnitNumText.visibility = View.GONE
+//        binding.flowRateText.visibility = View.GONE
+//        binding.saveOrUpdateButton.visibility = View.GONE
+//        binding.clearAllOrDeleteButton.visibility = View.GONE
+
         val adapter = PatientDisplayListAdapter(PatientListener { patient ->
+            Toast.makeText(activity, "Patient ID: ${patient.patientId}", Toast.LENGTH_SHORT).show()
+            binding.patientIdTextView.visibility = View.VISIBLE
+            binding.patientIdTextView.text = "Update Patient Data (ID #${patient.patientId})"
+//            binding.patientIdTextView.text = "Update Patient Data"
+//            patientDisplayViewModel.onPatientClicked(patient.patientId) // Uncomment if you want to be redirected to update fragment
             patientDisplayViewModel.initUpdateAndDelete(patient)
+//            binding.patientRecyclerView.visibility = View.GONE
+            patientDisplayViewModel.onPatientClicked()
         })
 
         binding.patientRecyclerView.adapter = adapter
@@ -98,6 +112,54 @@ class PatientDisplayFragment : Fragment() {
             }
         })
 
+        patientDisplayViewModel.saveOrUpdateButtonText.observe(viewLifecycleOwner, Observer {
+            if (it == "Save") {
+                binding.clearAllOrDeleteButton.visibility = View.GONE
+            }
+        })
+
+
+        patientDisplayViewModel.patientClicked.observe(viewLifecycleOwner, Observer {
+            if (it == true) {
+                Log.i("MYTAG", "Ready to Update!")
+                binding.inputPatientFirstNameLayout.visibility = View.VISIBLE
+                binding.inputPatientLastNameLayout.visibility = View.VISIBLE
+                binding.inputIVPumpUnitLayout.visibility = View.VISIBLE
+                binding.inputFlowRateLayout.visibility = View.VISIBLE
+                binding.firstNameText.visibility = View.VISIBLE
+                binding.lastNameText.visibility = View.VISIBLE
+                binding.ivPumpUnitNumText.visibility = View.VISIBLE
+                binding.flowRateText.visibility = View.VISIBLE
+                binding.saveOrUpdateButton.visibility = View.VISIBLE
+                binding.clearAllOrDeleteButton.visibility = View.VISIBLE
+                binding.backToPatientCards.visibility = View.VISIBLE
+                binding.addPatientButton.visibility = View.GONE
+                binding.deleteAllButton.visibility = View.GONE
+                binding.logoutButton.visibility = View.GONE
+                binding.listOfPatientsTextView.visibility = View.GONE
+                binding.patientRecyclerView.visibility = View.GONE
+            }else {
+                Log.i("MYTAG", "No Patient Clicked")
+                binding.inputPatientFirstNameLayout.visibility = View.GONE
+                binding.inputPatientLastNameLayout.visibility = View.GONE
+                binding.inputIVPumpUnitLayout.visibility = View.GONE
+                binding.inputFlowRateLayout.visibility = View.GONE
+                binding.patientIdTextView.visibility = View.GONE
+                binding.firstNameText.visibility = View.GONE
+                binding.lastNameText.visibility = View.GONE
+                binding.ivPumpUnitNumText.visibility = View.GONE
+                binding.flowRateText.visibility = View.GONE
+                binding.saveOrUpdateButton.visibility = View.GONE
+                binding.clearAllOrDeleteButton.visibility = View.GONE
+                binding.backToPatientCards.visibility = View.GONE
+                binding.addPatientButton.visibility = View.VISIBLE
+                binding.deleteAllButton.visibility = View.VISIBLE
+                binding.logoutButton.visibility = View.VISIBLE
+                binding.listOfPatientsTextView.visibility = View.VISIBLE
+                binding.patientRecyclerView.visibility = View.VISIBLE
+            }
+        })
+
 
         patientDisplayViewModel.navigateToLogin.observe(viewLifecycleOwner, Observer {
             if (it == true) {
@@ -106,6 +168,30 @@ class PatientDisplayFragment : Fragment() {
                 patientDisplayViewModel.doneNavigatingToLogin()
             }
         })
+
+
+//        patientDisplayViewModel.navigateToPatientDetail.observe(viewLifecycleOwner, Observer {
+//            it?.let {
+//                this.findNavController().navigate(
+//                    PatientDisplayFragmentDirections.actionPatientDisplayFragmentToUpdatePatientFragment(it)
+//                )
+//                patientDisplayViewModel.onPatientNavigated()
+//            }
+//        })
+
+//        patientDisplayViewModel.navigateToPatientDetail.observe(viewLifecycleOwner, Observer {
+//
+//        })
+
+
+//        patientId ->
+//        patientId?.let {
+//            this.findNavController().navigate(
+//                PatientDisplayFragmentDirections.actionPatientDisplayFragmentToUpdatePatientFragment(patientId)
+//            )
+//            patientDisplayViewModel.onPatientNavigated()
+//        }
+
 
         binding.patientRecyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.lifecycleOwner = this

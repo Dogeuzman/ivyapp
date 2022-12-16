@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_patientDisplayFragment_to_notificationDisplayFragment"
             app:destination="@id/notificationDisplayFragment" />
+        <action
+            android:id="@+id/action_patientDisplayFragment_to_updatePatientFragment"
+            app:destination="@id/updatePatientFragment" />
     </fragment>
     <fragment
         android:id="@+id/notificationDisplayFragment"
@@ -53,4 +56,16 @@
         android:name="com.example.ivyapp.FaqFragment"
         android:label="fragment_faq"
         tools:layout="@layout/fragment_faq" />
+    <fragment
+        android:id="@+id/updatePatientFragment"
+        android:name="com.example.ivyapp.updatePatient.UpdatePatientFragment"
+        android:label="fragment_update_patient"
+        tools:layout="@layout/fragment_update_patient" >
+        <argument
+            android:name="patient"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_updatePatientFragment_to_patientDisplayFragment"
+            app:destination="@id/patientDisplayFragment" />
+    </fragment>
 </navigation>

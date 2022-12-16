@@ -4,15 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/drawable/shr_menu.xml" value="0.134" />
-        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_about.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_dog_detail.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_faq.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_notification.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_notification_display.xml" value="0.1" />
-        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_patient_display.xml" value="0.2" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_notification_display.xml" value="0.2" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_patient_display.xml" value="0.1" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_register.xml" value="0.2" />
+        <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_update_patient.xml" value="0.264" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/fragment_user_display.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/list_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Jco/AndroidStudioProjects/ivyapp/app/src/main/res/layout/nav_header.xml" value="0.2076923076923077" />

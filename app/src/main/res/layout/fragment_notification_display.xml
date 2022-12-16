@@ -16,6 +16,14 @@
         android:layout_margin="15dp"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/notificationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Please immediately attend to the patients using the following IV Pump Units:"
+            android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/notification_recyclerView"
             android:layout_width="match_parent"
