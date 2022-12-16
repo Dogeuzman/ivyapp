@@ -2,6 +2,7 @@ package com.example.ivyapp.patientDatabase
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.ivyapp.patientsDisplay.PatientDisplayEvent
 
 class PatientRepository(private val patientDao: PatientDao) {
 
@@ -30,5 +31,9 @@ class PatientRepository(private val patientDao: PatientDao) {
 //    fun searchReturnPatient(patientId: Int): Patient {
 //        return patientDao.patientSearchReturnPatient(patientId)
 //    }
+
+    suspend fun searchPatientByIVPumpUnitNum(ivPumpNum: Int): Patient? {
+        return patientDao.patientSearchByIVPumpUnitNum(ivPumpNum)
+    }
 
 }

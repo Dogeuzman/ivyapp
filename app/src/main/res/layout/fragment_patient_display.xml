@@ -86,61 +86,144 @@
 <!--            android:layout_height="wrap_content"-->
 <!--            app:navigationIcon="@drawable/shr_menu"-->
 <!--            app:title="IvyApp"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/patient_id_text_view"-->
+        <TextView
+            android:id="@+id/patient_id_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/red" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/red"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            android:id="@+id/inputPatientFirstNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="20dp"
+            android:hint="Enter Patient First Name" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@color/red"
+                android:id="@+id/first_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={patientDisplayViewModel.inputPatientFirstname}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/red"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            android:id="@+id/inputPatientLastNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="20dp"
+            android:hint="Enter Patient Last Name" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@color/red"
+                android:id="@+id/last_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={patientDisplayViewModel.inputPatientLastName}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/red"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            android:id="@+id/inputIVPumpUnitLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="20dp"
+            android:hint="Enter IV Pump Unit Number" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@color/red"
+                android:id="@+id/iv_pump_unit_num_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={patientDisplayViewModel.inputIvPumpUnitNum}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/red"
+            android:paddingBottom="8dp"
+            app:boxStrokeColor="@color/red"
+            android:id="@+id/inputFlowRateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="20dp"
+            android:hint="Enter IV Pump Flow Rate" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@color/red"
+                android:id="@+id/flow_rate_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={patientDisplayViewModel.inputFlowRate}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        <EditText-->
+<!--            android:id="@+id/first_name_text"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:textColor="@color/red" />-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter Patient First Name"-->
+<!--            android:text="@={patientDisplayViewModel.inputPatientFirstname}"-->
+<!--            android:inputType="textPersonName" />-->
 
-        <EditText
-            android:id="@+id/first_name_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="Enter Patient First Name"
-            android:text="@={patientDisplayViewModel.inputPatientFirstname}"
-            android:inputType="textPersonName" />
+<!--        <EditText-->
+<!--            android:id="@+id/last_name_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter Patient Last Name"-->
+<!--            android:text="@={patientDisplayViewModel.inputPatientLastName}"-->
+<!--            android:inputType="textPersonName" />-->
 
-        <EditText
-            android:id="@+id/last_name_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="Enter Patient Last Name"
-            android:text="@={patientDisplayViewModel.inputPatientLastName}"
-            android:inputType="textPersonName" />
+<!--        <EditText-->
+<!--            android:id="@+id/iv_pump_unit_num_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter IV Pump Unit Number"-->
+<!--            android:text="@={patientDisplayViewModel.inputIvPumpUnitNum}"-->
+<!--            android:inputType="number" />-->
 
-        <EditText
-            android:id="@+id/iv_pump_unit_num_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="Enter IV Pump Unit Number"
-            android:text="@={patientDisplayViewModel.inputIvPumpUnitNum}"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/flow_rate_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="Enter IV Pump Flow Rate"
-            android:text="@={patientDisplayViewModel.inputFlowRate}"
-            android:inputType="numberDecimal" />
+<!--        <EditText-->
+<!--            android:id="@+id/flow_rate_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter IV Pump Flow Rate"-->
+<!--            android:text="@={patientDisplayViewModel.inputFlowRate}"-->
+<!--            android:inputType="numberDecimal" />-->
 
         <LinearLayout
             android:layout_width="match_parent"

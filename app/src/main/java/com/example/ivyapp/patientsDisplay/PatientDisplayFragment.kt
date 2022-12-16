@@ -89,6 +89,8 @@ class PatientDisplayFragment : Fragment() {
 
         val adapter = PatientDisplayListAdapter(PatientListener { patient ->
             Toast.makeText(activity, "Patient ID: ${patient.patientId}", Toast.LENGTH_SHORT).show()
+            binding.patientIdTextView.visibility = View.VISIBLE
+            binding.patientIdTextView.text = "Update Patient Data (ID #${patient.patientId})"
 //            binding.patientIdTextView.text = "Update Patient Data"
 //            patientDisplayViewModel.onPatientClicked(patient.patientId) // Uncomment if you want to be redirected to update fragment
             patientDisplayViewModel.initUpdateAndDelete(patient)
@@ -110,10 +112,20 @@ class PatientDisplayFragment : Fragment() {
             }
         })
 
+        patientDisplayViewModel.saveOrUpdateButtonText.observe(viewLifecycleOwner, Observer {
+            if (it == "Save") {
+                binding.clearAllOrDeleteButton.visibility = View.GONE
+            }
+        })
+
+
         patientDisplayViewModel.patientClicked.observe(viewLifecycleOwner, Observer {
             if (it == true) {
                 Log.i("MYTAG", "Ready to Update!")
-//                binding.patientIdTextView.visibility = View.VISIBLE
+                binding.inputPatientFirstNameLayout.visibility = View.VISIBLE
+                binding.inputPatientLastNameLayout.visibility = View.VISIBLE
+                binding.inputIVPumpUnitLayout.visibility = View.VISIBLE
+                binding.inputFlowRateLayout.visibility = View.VISIBLE
                 binding.firstNameText.visibility = View.VISIBLE
                 binding.lastNameText.visibility = View.VISIBLE
                 binding.ivPumpUnitNumText.visibility = View.VISIBLE
@@ -128,7 +140,11 @@ class PatientDisplayFragment : Fragment() {
                 binding.patientRecyclerView.visibility = View.GONE
             }else {
                 Log.i("MYTAG", "No Patient Clicked")
-//                binding.patientIdTextView.visibility = View.GONE
+                binding.inputPatientFirstNameLayout.visibility = View.GONE
+                binding.inputPatientLastNameLayout.visibility = View.GONE
+                binding.inputIVPumpUnitLayout.visibility = View.GONE
+                binding.inputFlowRateLayout.visibility = View.GONE
+                binding.patientIdTextView.visibility = View.GONE
                 binding.firstNameText.visibility = View.GONE
                 binding.lastNameText.visibility = View.GONE
                 binding.ivPumpUnitNumText.visibility = View.GONE

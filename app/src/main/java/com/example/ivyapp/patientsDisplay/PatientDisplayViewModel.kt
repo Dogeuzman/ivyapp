@@ -71,8 +71,18 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
                patientToUpdateOrDelete.patientLastName = inputPatientLastName.value!!
                patientToUpdateOrDelete.infusionPumpUnitNum = inputIvPumpUnitNum.value!!.toInt()
                patientToUpdateOrDelete.flowRate = inputFlowRate.value!!.toDouble()
-               update(patientToUpdateOrDelete)
-               _patientClicked.value = false
+
+
+
+               viewModelScope.launch {
+                   val newPatient = repository.searchPatientByIVPumpUnitNum(patientToUpdateOrDelete.infusionPumpUnitNum!!)
+                   if ((newPatient != null) && (newPatient.patientId != patientToUpdateOrDelete.patientId)) {
+                       _statusMessage.value = PatientDisplayEvent("IV Pump Unit ${patientToUpdateOrDelete.infusionPumpUnitNum} already being used. Choose another IV Pump Unit.")
+                   }else {
+                       update(patientToUpdateOrDelete)
+                       _patientClicked.value = false
+                   }
+               }
            }else {
 //               Log.i("MYTAG", "${inputPatientFirstname.value} ${inputPatientLastName.value}")
                val patientFirstName: String = inputPatientFirstname.value!!
@@ -80,7 +90,18 @@ class PatientDisplayViewModel(private val repository: PatientRepository): ViewMo
                val infusionPumpUnitNum: Int = inputIvPumpUnitNum.value!!.toInt()
                val flowRate: Double = inputFlowRate.value!!.toDouble()
                Log.i("MYTAG", "${inputPatientFirstname.value} ${inputPatientLastName.value}")
-               insert(Patient(0, patientFirstName, patientLastName, infusionPumpUnitNum, flowRate))
+
+               viewModelScope.launch {
+                   val newPatient = repository.searchPatientByIVPumpUnitNum(infusionPumpUnitNum!!)
+                   if (newPatient != null) {
+                       _statusMessage.value = PatientDisplayEvent("IV Pump Unit $infusionPumpUnitNum already being used. Choose another IV Pump Unit.")
+                       _patientClicked.value = true
+                   }else {
+                       insert(Patient(0, patientFirstName, patientLastName, infusionPumpUnitNum, flowRate))
+                       _patientClicked.value = false
+                   }
+               }
+
                inputPatientFirstname.value = null
                inputPatientLastName.value = null
                inputIvPumpUnitNum.value = null
